@@ -25,6 +25,9 @@ class DetailsScreen extends StatelessWidget {
             "assets/icons/back.svg",
             color: Colors.white,
           ),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
         ),
         title: Text(""),
         actions: [
@@ -46,18 +49,28 @@ class DetailsScreen extends StatelessWidget {
         ],
       ),
       body: SingleChildScrollView(
-          child: Container(
-        height: size.height,
-            child: Column(crossAxisAlignment: CrossAxisAlignment.start,
-
+          child: Stack(
+        children: [
+          Container(
+            height: size.height,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 ProductTitleWithImage(product: product),
                 ImageStack(),
-
-
-
               ],
             ),
+          ),
+          Positioned(
+            child: Container(
+                height: 250,
+                width: 300,
+                child: Image.asset(product.image)),
+            top: 60,
+            right: -20,
+          ),
+
+        ],
       )),
     );
   }
