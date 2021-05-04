@@ -56,7 +56,7 @@ class DetailsScreen extends StatelessWidget {
           children: [
             Container(
 
-              height: 710,
+              height: 730,
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,

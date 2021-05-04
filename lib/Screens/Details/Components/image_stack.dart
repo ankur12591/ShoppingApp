@@ -41,6 +41,9 @@ class ImageStack extends StatelessWidget {
                 ),
                 CounterWithFavButton(product: product,),
                 //Container(height: 200, color: Colors.orange,)
+                SizedBox(
+                  height: 20,
+                ),
 
 
                 BuyNow(product: product,)
