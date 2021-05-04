@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shoping_app/Screens/Details/Components/image_stack.dart';
@@ -49,28 +51,30 @@ class DetailsScreen extends StatelessWidget {
         ],
       ),
       body: SingleChildScrollView(
-          child: Stack(
-        children: [
-          Container(
-            height: size.height,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                ProductTitleWithImage(product: product),
-                ImageStack(),
-              ],
-            ),
-          ),
-          Positioned(
-            child: Container(
-                height: 250,
-                width: 300,
-                child: Image.asset(product.image)),
-            top: 60,
-            right: -20,
-          ),
+          child: Container(
+        child: Stack(
+          children: [
+            Container(
 
-        ],
+              height: 710,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ProductTitleWithImage(product: product),
+                  //Container(height: 600, color: Colors.orange,),
+                  ImageStack(product: product,),
+                ],
+              ),
+            ),
+            Positioned(
+              child: Container(
+                  height: 250, width: 300, child: Image.asset(product.image)),
+              top: 60,
+              right: -20,
+            ),
+          ],
+        ),
       )),
     );
   }

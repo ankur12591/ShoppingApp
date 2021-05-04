@@ -7,22 +7,20 @@ class ProductTitleWithImage extends StatelessWidget {
 
   const ProductTitleWithImage({this.product});
 
-
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
         //color: Colors.orange,
-        padding:  const EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
 
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
-              Text(
-                "Aristocratic Hand Bag",
-                style: TextStyle(color: Colors.white),
-              ),
+            Text(
+              "Aristocratic Hand Bag",
+              style: TextStyle(color: Colors.white),
+            ),
             Text(
               product.title,
               style: Theme.of(context)
@@ -30,7 +28,9 @@ class ProductTitleWithImage extends StatelessWidget {
                   .headline4
                   .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 100,),
+            SizedBox(
+              height: 100,
+            ),
             RichText(
               text: TextSpan(
                 children: [
@@ -43,12 +43,7 @@ class ProductTitleWithImage extends StatelessWidget {
                 ],
               ),
             ),
-              SizedBox(height: 20),
-
-
-
-
-
+            SizedBox(height: 20),
           ],
         ),
       ),
